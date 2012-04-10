@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="d3.v2.js"></script>
+    <style type="text/css">
+      body {
+        font: 14px sans-serif;
+        margin: 0;
+      }
+      .title {
+        font-size: 24px;
+        margin: 25px 0px 5px 200px;
+      }
+      .commit {
+        stroke: black;
+        stroke-width: 2px;
+      }
+      .timeline {
+        stroke: #444;
+        stroke-width: 1px;
+      }
+      .axis {
+        shape-rendering: crispEdges;
+      }
+      .x.axis .minor {
+        stroke-opacity: .5;
+      }
+      .y.axis path {
+        stroke: #fff;
+      }
+      .axis line, .axis path {
+        fill: none;
+        stroke: #000;
+      }
+      .help {
+        font-size: 16px;
+        margin: 0px 0px 5px 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="title">Javaposse Roundup GitHub Repositories</div>
+    <div id="chart"></div>
+    <div class="help">Mouseover a tick mark on a timeline to see commit info</div>
+    <div class="help">Scroll to zoom in or out</div>
+    <div class="help">Drag to pan left or right</div>
+    <script type="text/javascript" src="commits.js"></script>
+  </body>
+</html>
