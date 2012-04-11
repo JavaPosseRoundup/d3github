@@ -23,7 +23,7 @@ To use this project, simple clone this github repository and open the ```commits
 To see the d3github visualizer in use without cloning/downloading the project, look at this [example][example] on [bl.ocks.org][blocksorg].
 
 [example]: http://bl.ocks.org/2356163
-[blockorg]: http://bl.ocks.org
+[blocksorg]: http://bl.ocks.org
 
 ## Compatibility
 
