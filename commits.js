@@ -35,15 +35,15 @@ svg.append("rect")
     .attr("height", h)
     .style("fill", "#fff");
 
-d3.json("https://api.github.com/orgs/" + orgName + "/repos", function(repos) {
+$.getJSON("https://api.github.com/orgs/" + orgName + "/repos?callback=?", function(response) {
   var allCommits = [];
   var timelines = [];
-  repos.forEach(function(repo, i, array) {
+  $.each(response.data, function(i, repo) {
     function gitSource(repo) {
-      return repo.url + "/commits";
+      return repo.url + "/commits?callback=?";
     }
-    d3.json(gitSource(repo), function(results) {
-      var commits = results.map(function(r) {
+    $.getJSON(gitSource(repo), function(response) {
+      var commits = response.data.map(function(r) {
         return {
           repo: repo.name,
           message: r.commit.message,
@@ -61,7 +61,7 @@ d3.json("https://api.github.com/orgs/" + orgName + "/repos", function(repos) {
       };
       allCommits.push.apply(allCommits, commits);
       timelines.push(timeline);
-      if (timelines.length == array.length) drawChart(allCommits, timelines);
+      if (timelines.length == response.data.length) drawChart(allCommits, timelines);
     });
   });
 });
