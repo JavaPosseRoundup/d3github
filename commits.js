@@ -38,7 +38,7 @@ svg.append("rect")
 $.getJSON("https://api.github.com/orgs/" + orgName + "/repos?callback=?", function(response) {
   var allCommits = [];
   var timelines = [];
-  $.each(response.data, function(i, repo) {
+  response.data.forEach(function(repo, i, array) {
     function gitSource(repo) {
       return repo.url + "/commits?callback=?";
     }
@@ -61,7 +61,7 @@ $.getJSON("https://api.github.com/orgs/" + orgName + "/repos?callback=?", functi
       };
       allCommits.push.apply(allCommits, commits);
       timelines.push(timeline);
-      if (timelines.length == response.data.length) drawChart(allCommits, timelines);
+      if (timelines.length == array.length) drawChart(allCommits, timelines);
     });
   });
 });
