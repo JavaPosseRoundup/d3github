@@ -1,7 +1,7 @@
 var orgName = "JavaPosseRoundup";
 var roundupStart = new Date(2012, 2, 25);
 
-var margin = {top: 20, right: 10, bottom: 50, left: 200},
+var margin = {top: 20, right: 2, bottom: 50, left: 200},
     w = 960 - margin.left - margin.right,
     h = 600 - margin.top - margin.bottom,
     tickHeight = 10;
@@ -35,15 +35,15 @@ svg.append("rect")
     .attr("height", h)
     .style("fill", "#fff");
 
-d3.json("https://api.github.com/orgs/" + orgName + "/repos", function(repos) {
+$.getJSON("https://api.github.com/orgs/" + orgName + "/repos?callback=?", function(response) {
   var allCommits = [];
   var timelines = [];
-  repos.forEach(function(repo, i, array) {
+  response.data.forEach(function(repo, i, array) {
     function gitSource(repo) {
-      return repo.url + "/commits";
+      return repo.url + "/commits?callback=?";
     }
-    d3.json(gitSource(repo), function(results) {
-      var commits = results.map(function(r) {
+    $.getJSON(gitSource(repo), function(response) {
+      var commits = response.data.map(function(r) {
         return {
           repo: repo.name,
           message: r.commit.message,
