@@ -4,7 +4,9 @@ This project is an experiment in visualizing code development using the amazing 
 
 It was conceived at the 2012 Java Posse [Roundup][roundup], an amazing gathering of talented developers from around the world. The developers at the Roundup used [github][github] to collaborate on many different interesting projects - too many for any one person to fully participate in.
 
-[I][githubmtye] was consequently inspired to see if I could use the d3 JavaScript library to create a [visualization][visarticle] of all the work the Roundup developers had accompished (or at least all the work they'd committed to [github][githubjpr]). This is the result.
+[I][githubmtye] was consequently inspired to see if I could use the d3 JavaScript library to create a [visualization][visarticle] of all the work the Roundup developers had accomplished (or at least all the work they'd committed to [github][githubjpr]). This project is the result.
+
+More information is available at the d3github [project page][d3githubpage].
 
 [d3home]: http://mbostock.github.com/d3/ "d3 at github"
 [githubapi]: http://developer.github.com/v3/
@@ -13,6 +15,7 @@ It was conceived at the 2012 Java Posse [Roundup][roundup], an amazing gathering
 [githubmtye]: https://github.com/mtye
 [visarticle]: http://en.wikipedia.org/wiki/Information_visualization
 [githubjpr]: https://github.com/JavaPosseRoundup "Java Posse Roundup at github"
+[d3githubpage]: http://javaposseroundup.github.com/d3github/
 
 ## Installation and Use
 
@@ -20,10 +23,7 @@ To use this project, simple clone this github repository and open the ```commits
 
 ## Examples
 
-To see the d3github visualizer in use without cloning/downloading the project, look at this [example][example] on [bl.ocks.org][blocksorg].
-
-[example]: http://bl.ocks.org/2356163
-[blocksorg]: http://bl.ocks.org
+A live example of the d3github visualizer can be found on the d3github [project page][d3githubpage].
 
 ## Compatibility
 
