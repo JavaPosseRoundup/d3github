@@ -1,0 +1,21 @@
+.commit {
+  stroke: black;
+  stroke-width: 2px;
+}
+.timeline {
+  stroke: #444;
+  stroke-width: 1px;
+}
+.axis {
+  shape-rendering: crispEdges;
+}
+.x.axis .minor {
+  stroke-opacity: .5;
+}
+.y.axis path {
+  stroke: #fff;
+}
+.axis line, .axis path {
+  fill: none;
+  stroke: #000;
+}
