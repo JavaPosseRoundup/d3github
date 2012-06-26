@@ -5,10 +5,13 @@ var orgName = commits.attr("orgName") || "JavaPosseRoundup";
 var startDate = commits.attr("startDate") || "";
 var width = commits.attr("width") || 1200;
 var height = commits.attr("height") || 600;
+var leftMargin = commits.attr("leftMargin") || 180;
+var rightMargin = commits.attr("rightMargin") || 0;
+var topMargin = commits.attr("topMargin") || 20;
+var bottomMargin = commits.attr("bottomMargin") || 50;
 
-var margin = {top: 20, right: 0, bottom: 50, left: 180},
-    w = width - margin.left - margin.right,
-    h = height - margin.top - margin.bottom;
+var w = width - leftMargin - rightMargin,
+    h = height - topMargin - bottomMargin;
 
 // Scales. Note the inverted domain for the y-scale: bigger is up!
 var x = d3.time.scale().rangeRound([0, w]),
@@ -21,10 +24,10 @@ var yAxis = d3.svg.axis().scale(y).tickSize(0).tickPadding(5).orient("left");
 
 // Add an SVG element with the desired dimensions and margin.
 var svg = commits.append("svg")
-    .attr("width", w + margin.left + margin.right)
-    .attr("height", h + margin.top + margin.bottom)
+    .attr("width", w + leftMargin + rightMargin)
+    .attr("height", h + topMargin + bottomMargin)
   .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    .attr("transform", "translate(" + leftMargin + "," + topMargin + ")");
 
 // Add the clip path.
 svg.append("clipPath")
