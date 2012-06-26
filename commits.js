@@ -1,10 +1,14 @@
-var orgName = "JavaPosseRoundup";
-var roundupStart = new Date(2012, 2, 25);
+// Find the element where the commit timeline should be drawn
+var commits = d3.select("#commits");
+
+var orgName = commits.attr("orgName") || "JavaPosseRoundup";
+var startDate = commits.attr("startDate") || "";
+var width = commits.attr("width") || 1200;
+var height = commits.attr("height") || 600;
 
 var margin = {top: 20, right: 0, bottom: 50, left: 180},
-    w = 1200 - margin.left - margin.right,
-    h = 600 - margin.top - margin.bottom,
-    tickHeight = 10;
+    w = width - margin.left - margin.right,
+    h = height - margin.top - margin.bottom;
 
 // Scales. Note the inverted domain for the y-scale: bigger is up!
 var x = d3.time.scale().rangeRound([0, w]),
@@ -16,7 +20,7 @@ var xAxis = d3.svg.axis().scale(x).tickSubdivide(true);
 var yAxis = d3.svg.axis().scale(y).tickSize(0).tickPadding(5).orient("left");
 
 // Add an SVG element with the desired dimensions and margin.
-var svg = d3.select("#chart").append("svg")
+var svg = commits.append("svg")
     .attr("width", w + margin.left + margin.right)
     .attr("height", h + margin.top + margin.bottom)
   .append("g")
@@ -68,7 +72,13 @@ $.getJSON("https://api.github.com/orgs/" + orgName + "/repos?callback=?", functi
 
 function drawChart(allCommits, timelines) {
 
-  x.domain([roundupStart, d3.time.day.ceil(new Date())]);
+  var tickHeight = height / (timelines.length * 4 + 1);
+
+  var earliestCommitDate = d3.min(timelines, function(d) { return d.earliest; });
+
+  var start = d3.time.format("%Y-%m-%d").parse(startDate) || earliestCommitDate;
+
+  x.domain([d3.time.day.floor(start), d3.time.day.ceil(new Date())]);
 
   y.domain(timelines.map(function(t) { return t.repo; }));
 
