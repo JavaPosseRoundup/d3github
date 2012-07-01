@@ -5,10 +5,10 @@ var orgName = commits.attr("orgName") || "JavaPosseRoundup";
 var startDate = commits.attr("startDate") || "";
 var width = commits.attr("width") || 1200;
 var height = commits.attr("height") || 600;
-var leftMargin = commits.attr("leftMargin") || 180;
-var rightMargin = commits.attr("rightMargin") || 0;
-var topMargin = commits.attr("topMargin") || 20;
-var bottomMargin = commits.attr("bottomMargin") || 50;
+var leftMargin = commits.attr("left-margin") || 180;
+var rightMargin = commits.attr("right-margin") || 0;
+var topMargin = commits.attr("top-margin") || 20;
+var bottomMargin = commits.attr("bottom-margin") || 60;
 
 var w = width - leftMargin - rightMargin,
     h = height - topMargin - bottomMargin;
