@@ -1,14 +1,14 @@
 # Introduction
 
-This project is an experiment in visualizing code development using the amazing [d3][d3home] JavaScript library and the github REST [api][githubapi].
+This project is an experiment in visualizing code development using the amazing [D3][d3home] JavaScript library and the github REST [API][githubapi].
 
 It was conceived at the 2012 Java Posse [Roundup][roundup], an amazing gathering of talented developers from around the world. The developers at the Roundup used [github][github] to collaborate on many different interesting projects - too many for any one person to fully participate in.
 
-[I][githubmtye] was consequently inspired to see if I could use the d3 JavaScript library to create a [visualization][visarticle] of all the work the Roundup developers had accomplished (or at least all the work they'd committed to [github][githubjpr]). This project is the result.
+[I][githubmtye] was consequently inspired to see if I could use the D3 JavaScript library to create a [visualization][visarticle] of all the work the Roundup developers had accomplished (or at least all the work they'd committed to [github][githubjpr]). This project is the result.
 
 More information is available at the d3github [project page][d3githubpage].
 
-[d3home]: http://mbostock.github.com/d3/ "d3 at github"
+[d3home]: http://d3js.org/ "D3 (Data-Driven Documents) website"
 [githubapi]: http://developer.github.com/v3/
 [roundup]: http://www.mindviewinc.com/Conferences/JavaPosseRoundup/
 [github]: https://github.com/ "Duh!"
@@ -19,7 +19,7 @@ More information is available at the d3github [project page][d3githubpage].
 
 ## Installation and Use
 
-To use this project, simple clone this github repository and open the ```commits.html``` file in your web browser. The d3 library is available in the root directory, so there's no need to install it (or anything else).
+To use this project, simple clone this github repository and open the ```commits.html``` file in your web browser. (The file references CDN-hosted versions of the D3 and jQuery libraries, so you'l need an Internet connection.)
 
 ## Examples
 
@@ -27,4 +27,4 @@ A live example of the d3github visualizer can be found on the d3github [project 
 
 ## Compatibility
 
-The d3 library uses the CSS Selectors API Level 1 and SVG, which may not be supported in older browsers. This code in this project has been verified to work with Google Chrome (verison 17.0), Firefox (11.0), and Safari (5.1), but not with Internet Explorer. The minimum versions that _should_ work are Chrome 4.0, Firefox 3.5, Safari 3.2, and Internet Explorer 9.0.
+The D3 library uses the CSS Selectors API Level 1 and SVG, which may not be supported in older browsers. This code in this project has been verified to work with Google Chrome (verison 17.0), Firefox (11.0), and Safari (5.1), but not with Internet Explorer. The minimum versions that _should_ work are Chrome 4.0, Firefox 3.5, Safari 3.2, and Internet Explorer 9.0.
