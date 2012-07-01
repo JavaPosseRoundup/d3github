@@ -24,8 +24,8 @@ var yAxis = d3.svg.axis().scale(y).tickSize(0).tickPadding(5).orient("left");
 
 // Add an SVG element with the desired dimensions and margin.
 var svg = commits.append("svg")
-    .attr("width", w + leftMargin + rightMargin)
-    .attr("height", h + topMargin + bottomMargin)
+    .attr("width", width)
+    .attr("height", height)
   .append("g")
     .attr("transform", "translate(" + leftMargin + "," + topMargin + ")");
 
