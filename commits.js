@@ -141,7 +141,6 @@ function drawChart(allCommits, timelines) {
 
     committer.enter().append("text")
       .attr("class", "committer")
-      .attr("clip-path", "url(#clip)")
       .attr("x", x(d.commitDate))
       .attr("y", y(d.repo))
       .attr("dx", -2)
@@ -157,7 +156,6 @@ function drawChart(allCommits, timelines) {
 
     message.enter().append("text")
       .attr("class", "message")
-      .attr("clip-path", "url(#clip)")
       .attr("x", x(d.commitDate))
       .attr("y", y(d.repo))
       .attr("dx", 2)
