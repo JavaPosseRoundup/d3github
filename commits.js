@@ -88,7 +88,7 @@ function drawChart(allCommits, timelines) {
   // Add the x-axis.
   svg.append("g")
     .attr("class", "x axis")
-    .attr("transform", "translate(0," + (h + 20) + ")")
+    .attr("transform", "translate(0," + (h + topMargin + tickHeight) + ")")
     .call(xAxis);
 
   // Add the y-axis.
