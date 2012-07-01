@@ -3,8 +3,10 @@ var commits = d3.select("#commits");
 
 var orgName = commits.attr("orgName") || "JavaPosseRoundup";
 var startDate = commits.attr("startDate") || "";
-var width = commits.attr("width") || 1200;
-var height = commits.attr("height") || 600;
+var leftRightPadding = commits.attr("left-right-padding") || 20;
+var topBottomPadding = commits.attr("top-bottom-padding") || 150;
+var width = commits.attr("width") || $(document).width() - leftRightPadding;
+var height = commits.attr("height") || $(window).height() - topBottomPadding;
 var leftMargin = commits.attr("left-margin") || 180;
 var rightMargin = commits.attr("right-margin") || 0;
 var topMargin = commits.attr("top-margin") || 20;
@@ -34,7 +36,7 @@ svg.append("clipPath")
     .attr("id", "clip")
   .append("rect")
     .attr("width", w)
-    .attr("height", h + 20);
+    .attr("height", h);
 
 // Need something in the background absorb the mouse events!
 svg.append("rect")
