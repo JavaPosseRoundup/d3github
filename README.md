@@ -19,7 +19,7 @@ More information is available at the d3github [project page][d3githubpage].
 
 ## Installation and Use
 
-To use this project, simple clone this github repository and open the ```commits.html``` file in your web browser. (The file references CDN-hosted versions of the D3 and jQuery libraries, so you'l need an Internet connection.)
+To use this project, simply clone this github repository and open the ```commits.html``` file in your web browser. (The file references CDN-hosted versions of the D3 and jQuery libraries, so you'll need an Internet connection.)
 
 ## Examples
 
