@@ -40,7 +40,7 @@ svg.append("clipPath")
 svg.append("rect")
     .attr("width", w)
     .attr("height", h)
-    .style("fill", "#fff");
+    .style("fill-opacity", ".0");
 
 $.getJSON("https://api.github.com/orgs/" + orgName + "/repos?callback=?", function(response) {
   var allCommits = [];
